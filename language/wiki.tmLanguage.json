@@ -9,9 +9,8 @@
         {"include": "#rawHtml"},
         {"include": "#cut"},
         {"include": "#action"},
-        {"include": "#divider"},
-        {"include": "text.html.markdown"}
-	],
+        {"include": "#divider"}
+    ],
 	"repository": {
         "heading": {
             "patterns": [
@@ -126,11 +125,11 @@
         },
         "link": {
             "patterns": [{
-                "match": "\\(\\((.+?)( (.+?))?\\)\\)",
+                "match": "\\(\\(([^ .]+)( [^).]+)?\\)\\)",
                 "name": "markup.underline.link.yandex.wiki",
                 "captures": {
                     "1": {"name": "markup.underline.link.yandex.wiki"},
-                    "3": {"name": "markup.underline.text.yandex.wiki"}
+                    "2": {"name": "markup.underline.text.yandex.wiki"}
                 }
             }]
         },
