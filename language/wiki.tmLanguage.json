@@ -125,7 +125,7 @@
         },
         "link": {
             "patterns": [{
-                "match": "\\(\\(([^ .]+)( [^).]+)?\\)\\)",
+                "match": "\\(\\(([^ ]+)( [^).]+)?\\)\\)",
                 "name": "markup.underline.link.yandex.wiki",
                 "captures": {
                     "1": {"name": "markup.underline.link.yandex.wiki"},
