@@ -1,6 +1,6 @@
 # vscode-yandex-wiki
 
-Visual Studio Code syntax highlight and snippets for [Yandex.Wiki](https://yandex.ru/support/connect-wiki/static-markup.html?lang=en) markup. Markdown is support too! Install from [VSCode Marketplace](https://marketplace.visualstudio.com/itemdetails?itemName=rusnasonov.vscode-yandex-wiki)
+Visual Studio Code syntax highlight and snippets for [Yandex.Wiki](https://yandex.ru/support/connect-wiki/static-markup.html?lang=en) markup. Install from [VSCode Marketplace](https://marketplace.visualstudio.com/itemdetails?itemName=rusnasonov.vscode-yandex-wiki)
 
 
 ## Highlight
