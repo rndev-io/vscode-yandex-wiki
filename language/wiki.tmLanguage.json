@@ -1,0 +1,250 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Wiki",
+    "scopeName": "text.yandex.wiki",
+	"patterns": [
+        {"include": "#inline"},
+        {"include": "#heading"},
+        {"include": "#code"},
+        {"include": "#rawHtml"},
+        {"include": "#cut"},
+        {"include": "#action"},
+        {"include": "#divider"},
+        {"include": "text.html.markdown"}
+	],
+	"repository": {
+        "heading": {
+            "patterns": [
+                {
+                    "match": "^(={2,7}\\+?)(\\s*.*)",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {"match": "^={2}\\+?$", "name": "markup.heading.1.yandex.wiki"},
+                                {"match": "^={3}\\+?$", "name": "markup.heading.2.yandex.wiki"},
+                                {"match": "^={4}\\+?$", "name": "markup.heading.3.yandex.wiki"},
+                                {"match": "^={5}\\+?$", "name": "markup.heading.4.yandex.wiki"},
+                                {"match": "^={6}\\+?$", "name": "markup.heading.5.yandex.wiki"},
+                                {"match": "^={7}\\+?$", "name": "markup.heading.6.yandex.wiki"}
+                            ]
+                        },
+                        "2": {"name": "entity.name.section.yandex.wiki", "patterns": [{"include": "#inline"}]}
+                    }
+                }
+            ]
+        },
+        "inline": {
+            "patterns": [
+                {"include": "#bold"},
+                {"include": "#link"},
+                {"include": "#italic"},
+                {"include": "#underline"},
+                {"include": "#question"},
+                {"include": "#strikethrough"},
+                {"include": "#remark"},
+                {"include": "#quote"},
+                {"include": "#monospace"},
+                {"include": "#small"},
+                {"include": "#term"}
+            ]
+        },
+        "bold": {
+            "patterns": [{
+                "match": "\\*\\*.*(?<!\\s)\\*\\*",
+                "name": "markup.bold.yandex.wiki"
+            }]
+        },
+        "italic": {
+            "patterns": [{
+                "match": "\/\/.*(?<!\\s)\/\/",
+                "name": "markup.italic.yandex.wiki"
+            }]
+        },
+        "underline": {
+            "patterns": [{
+                "match": "__.*(?<!\\s)__",
+                "name": "markup.underline.yandex.wiki"
+            }]
+        },
+        "monospace": {
+            "patterns": [{
+                "begin": "##",
+                "end": "##",
+                "name": "markup.yandex.wiki.monospace",
+                "beginCaptures": {"0": {"name": "punctuation.definition.yandex.wiki.monospace"}},
+                "endCaptures": {"0": {"name": "punctuation.definition.yandex.wiki.monospace"}}
+            }]
+        },
+        "small": {
+            "patterns": [{
+                "begin": "\\+\\+",
+                "end": "\\+\\+",
+                "name": "markup.yandex.wiki.small",
+                "beginCaptures": {"0": {"name": "punctuation.definition.yandex.wiki.small"}},
+                "endCaptures": {"0": {"name": "punctuation.definition.yandex.wiki.small"}}
+            }]
+        },
+        "question": {
+            "patterns": [{
+                "match": "\\?\\?.*?(?<!\\s)\\?\\?",
+                "name": "markup.yandex.wiki.question"
+            }]
+        },
+        "divider": {
+            "patterns": [{
+                "match": "^----$",
+                "name": "punctuation.definition.yandex.wiki.divider"
+            }]
+        },
+        "strikethrough": {
+            "patterns": [
+                {
+                    "begin": "^--$",
+                    "end": "^--$",
+                    "name": "markup.yandex.wiki.strikethrough.multiline",
+                    "beginCaptures": {"0": {"name": "punctuation.definition.yandex.wiki.strikethrough"}},
+                    "endCaptures": {"0": {"name": "punctuation.definition.yandex.wiki.strikethrough"}}
+                },
+                {
+                    "match": "(--)[^-.]+(--)",
+                    "name": "markup.yandex.wiki.strikethrough.inline",
+                    "captures": {
+                        "1": {"name": "punctuation.definition.yandex.wiki.strikethrough"},
+                        "2": {"name": "punctuation.definition.yandex.wiki.strikethrough"}
+                    }
+                }
+            ]
+        },
+        "remark": {
+            "patterns": [
+                {"match": "!!\\((green|зел|зеленый)\\).*?(?<!\\s)!!", "name": "markup.yandex.wiki.remark.green"},
+                {"match": "!!\\((blue|син|синий)\\).*?(?<!\\s)!!", "name": "markup.yandex.wiki.remark.blue"},
+                {"match": "!!\\((gray|grey|сер|серый)\\).*?(?<!\\s)!!", "name": "markup.yandex.wiki.remark.gray"},
+                {"match": "!!\\((yellow|жел)\\).*?(?<!\\s)!!", "name": "markup.yandex.wiki.remark.yellow"},
+                {"match": "!!(\\((red|крас|красный)\\))?.*?(?<!\\s)!!", "name": "markup.yandex.wiki.remark.red"}
+            ]
+        },
+        "link": {
+            "patterns": [{
+                "match": "\\(\\((.+?)( (.+?))?\\)\\)",
+                "name": "markup.underline.link.yandex.wiki",
+                "captures": {
+                    "1": {"name": "markup.underline.link.yandex.wiki"},
+                    "3": {"name": "markup.underline.text.yandex.wiki"}
+                }
+            }]
+        },
+        "quote": {
+            "patterns": [
+                {
+                    "match": "^>[ ]?.*$",
+                    "name": "markup.quote.yandex.wiki.inline"
+                },
+                {
+                    "begin": "<\\[",
+                    "end": "\\]>",
+                    "beginCaptures": {"0": {"name": "punctuation.definition.yandex.wiki.quote"}},
+                    "endCaptures": {"0": {"name": "punctuation.definition.yandex.wiki.quote"}},
+                    "name": "markup.quote.yandex.wiki.multiline"
+                }
+            ]
+        },
+        "term": {
+            "patterns":[{
+                "match": "(\\(\\?).*?(\\?\\))",
+                "name": "markup.yandex.wiki.therm",
+                "captures": {
+                    "1": {"name": "punctuation.definition.yandex.wiki.term"},
+                    "2":  {"name": "punctuation.definition.yandex.wiki.term"}
+                }
+            }]
+        },
+        "rawHtml": {
+            "patterns": [{
+                "begin": "<#",
+                "end": "#>",
+                "beginCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
+                "endCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
+                "name": "markup.fenced_code.block.yandex.wiki",
+                "contentName": "meta.embedded.block.html",
+                "patterns": [{"include": "text.html.basic"}]
+            }]
+        },
+        "cut": {
+            "patterns": [{
+                "begin": "<\\{",
+                "end": "\\}>",
+                "beginCaptures": {"0": {"name": "punctuation.definition.yandex.wiki.cut"}},
+                "endCaptures": {"0": {"name": "punctuation.definition.yandex.wiki.cut"}},
+                "name": "markup.yandex.wiki.cut"
+            }]
+        },
+        "action": {
+            "patterns": [{
+                "match": "({{)(\\w+)?(.*)(}})",
+                "name": "markup.yandex.wiki.action",
+                "captures": {
+                    "1": {"name": "punctuation.definition.yandex.wiki.action"},
+                    "4":  {"name": "punctuation.definition.yandex.wiki.action"}
+                }
+            }]
+        },
+        "code": {
+            "patterns": [
+                {
+                    "begin": "%%\\(python\\)",
+                    "end": "%%",
+                    "beginCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
+                    "endCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
+                    "name": "markup.fenced_code.block.yandex.wiki",
+                    "contentName": "meta.embedded.block.python",
+                    "patterns": [{"include": "source.python"}]
+                },
+                {
+                    "begin": "%%\\(js\\)",
+                    "end": "%%",
+                    "beginCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
+                    "endCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
+                    "name": "markup.fenced_code.block.yandex.wiki",
+                    "contentName": "meta.embedded.block.js",
+                    "patterns": [{"include": "source.js"}]
+                },
+                {
+                    "begin": "%%\\(cpp\\)",
+                    "end": "%%",
+                    "beginCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
+                    "endCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
+                    "name": "markup.fenced_code.block.yandex.wiki",
+                    "contentName": "meta.embedded.block.cpp",
+                    "patterns": [{"include": "source.cpp"}]
+                },
+                {
+                    "begin": "%%\\(java\\)",
+                    "end": "%%",
+                    "beginCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
+                    "endCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
+                    "name": "markup.fenced_code.block.yandex.wiki",
+                    "contentName": "meta.embedded.block.java",
+                    "patterns": [{"include": "source.java"}]
+                },
+                {
+                    "begin": "%%\\(go\\)",
+                    "end": "%%",
+                    "beginCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
+                    "endCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
+                    "name": "markup.fenced_code.block.yandex.wiki",
+                    "contentName": "meta.embedded.block.go",
+                    "patterns": [{"include": "source.go"}]
+                },
+                {
+                    "begin": "%%",
+                    "end": "%%",
+                    "beginCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
+                    "endCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
+                    "name": "markup.fenced_code.block.yandex.wiki"
+                }
+            ]
+        }
+       
+    }
+}

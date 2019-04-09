@@ -1,0 +1,182 @@
+{
+    "h1": {
+        "prefix": "h1",
+        "body": ["== ${0:text}"],
+        "name": "H1 heading, biggest"
+    },
+    "h2": {
+        "prefix": "h2",
+        "body": ["=== ${0:text}"],
+        "name": "H2 heading"
+    },
+    "h3": {
+        "prefix": "h3",
+        "body": ["==== ${0:text}"],
+        "name": "H3 heading"
+    },
+    "h4": {
+        "prefix": "h4",
+        "body": ["===== ${0:text}"],
+        "name": "H4 heading"
+    },
+    "h5": {
+        "prefix": "h5",
+        "body": ["====== ${0:text}"],
+        "name": "H5 heading"
+    },
+    "h6": {
+        "prefix": "h6",
+        "body": ["======= ${0:text}"],
+        "name": "H6 heading, smallest"
+    },
+    "bold": {
+        "prefix": "bold",
+        "body": ["**${0:${TM_SELECTED_TEXT:text}}**"],
+        "name": "Bold"
+    },
+    "italic": {
+        "prefix": "italic",
+        "body": ["//${0:${TM_SELECTED_TEXT:text}}//"],
+        "name": "Italic"
+    },
+    "underline": {
+        "prefix": "underline",
+        "body": ["__${0:${TM_SELECTED_TEXT:text}}__"],
+        "name": "Underline"
+    },
+    "monospace": {
+        "prefix": "monospace",
+        "body": ["##${0:${TM_SELECTED_TEXT:text}}##"],
+        "name": "Monospace"
+    },
+    "small": {
+        "prefix": "small",
+        "body": ["++${0:${TM_SELECTED_TEXT:text}}++"],
+        "name": "Small"
+    },
+    "question": {
+        "prefix": "question",
+        "body": ["??${0:${TM_SELECTED_TEXT:text}}??"],
+        "name": "Question"
+    },
+    "divider": {
+        "prefix": "divider",
+        "body": ["----"],
+        "name": "Divider"
+    },
+    "green":{
+        "prefix": "green",
+        "body": ["!!(green)${0:${TM_SELECTED_TEXT:text}}!!"],
+        "name": "Green"
+    },
+    "red":{
+        "prefix": "red",
+        "body": ["!!(red)${0:${TM_SELECTED_TEXT:text}}!!"],
+        "name": "Red"
+    },
+    "blue":{
+        "prefix": "blue",
+        "body": ["!!(blue)${0:${TM_SELECTED_TEXT:text}}!!"],
+        "name": "Blue"
+    },
+    "gray":{
+        "prefix": "gray",
+        "body": ["!!(gray)${0:${TM_SELECTED_TEXT:text}}!!"],
+        "name": "Gray"
+    },
+    "yellow":{
+        "prefix": "yellow",
+        "body": ["!!(yellow)${0:${TM_SELECTED_TEXT:text}}!!"],
+        "name": "Yellow"
+    },
+    "link":{
+        "prefix": "link",
+        "body": ["((${0:${TM_SELECTED_TEXT:link}} ${1:text}))"],
+        "name": "Link"
+    },
+    "quote":{
+        "prefix": "quote",
+        "body": ["<{", "${0:${TM_SELECTED_TEXT:text}}", "}>"],
+        "name": "Quote"
+    },
+    "term":{
+        "prefix": "term",
+        "body": ["(?${0:${TM_SELECTED_TEXT:text}}?)"],
+        "name": "Term"
+    },
+    "rawHtml":{
+        "prefix": "rawhtml",
+        "body": ["<#${0:${TM_SELECTED_TEXT:text}}#>"],
+        "name": "Raw html"
+    },
+    "cut":{
+        "prefix": "cut",
+        "body": ["<{${1:title}", "${0:${TM_SELECTED_TEXT:text}}", "}>"],
+        "name": "Cut"
+    },
+    "tree": {
+        "prefix": "tree_action",
+        "body": ["{{tree page=$1 nomark=${2|0,1|} depth=${3:1} show_redirects=${4|false,true|} show_grids=${5|false,true|} show_owners=${6|false,true|} show_titles=${7|false,true|} show_created_at=${8|false,true|} sort_by=${9|title,cluster,created_at,modified_at|} sort=${10|asc,desc|} }}"],
+        "name": "Pages in a cluster"
+    },
+    "backLinks": {
+        "prefix": "backLinks_action",
+        "body": ["{{backLinks page=$0}}"],
+        "name": "Pages that link to this page"
+    },
+    "linkstree": {
+        "prefix": "linkstree_action",
+        "body": ["{{linkstree root=$1 ${2|bydate,bychange|} }}"],
+        "name": "Pages that this page links to"
+    },
+    "mypages": {
+        "prefix": "mypages_action",
+        "body": ["{{mypages user=$1 levels=${2|1,2,3|} }}"],
+        "name": "Pages I own"
+    },
+    "mychanges": {
+        "prefix": "mychanges_action",
+        "body": ["{{mychanges max=$1 }}"],
+        "name": "Pages I edit"
+    },
+    "mywatchespages": {
+        "prefix": "mywatchespages_action",
+        "body": ["{{mywatchespages}}"],
+        "name": "Pages I'm subscribed to"
+    },
+    "watchers": {
+        "prefix": "watchers_action",
+        "body": ["{{watchers}}"],
+        "name": "Pages belonging to users subscribed to this one"
+    },
+    "code":{
+        "prefix": "code",
+        "body": ["%%", "${0:${TM_SELECTED_TEXT:text}}", "%%"],
+        "name": "Code"
+    },
+    "python":{
+        "prefix": "python",
+        "body": ["%%(python)", "${0:${TM_SELECTED_TEXT:text}}", "%%"],
+        "name": "Python code"
+    },
+    "javascript":{
+        "prefix": "javascript",
+        "body": ["%%(js)", "${0:${TM_SELECTED_TEXT:text}}", "%%"],
+        "name": "JS code"
+    },
+    "java":{
+        "prefix": "java",
+        "body": ["%%(java)", "${0:${TM_SELECTED_TEXT:text}}", "%%"],
+        "name": "Java code"
+    },
+    "cpp":{
+        "prefix": "cpp",
+        "body": ["%%(cpp)", "${0:${TM_SELECTED_TEXT:text}}", "%%"],
+        "name": "CPP code"
+    },
+    "golang":{
+        "prefix": "golang",
+        "body": ["%%(go)", "${0:${TM_SELECTED_TEXT:text}}", "%%"],
+        "name": "Golang code"
+    }
+}

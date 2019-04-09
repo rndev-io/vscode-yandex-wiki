@@ -1,0 +1,110 @@
+{
+	"tokenColors": [
+		{
+			"name": "Heading",
+			"scope": "markup.heading",
+			"settings": {
+				"fontStyle": "",
+				"foreground": "#0000FF"
+			}
+		},
+		{	
+			"name": "Bold",
+			"scope": "markup.bold.yandex.wiki",
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#f92672"
+			}
+		},
+		{	
+			"name": "Italic",
+			"scope": "markup.italic.yandex.wiki",
+			"settings": {
+				"fontStyle": "italic",
+				"foreground": "#e42e70"
+			}
+		},
+		{	
+			"name": "Underline",
+			"scope": "markup.underline.yandex.wiki",
+			"settings": {
+				"fontStyle": "underline",
+				"foreground": "#e42e70"
+			}
+		},
+		{	
+			"name": "Question",
+			"scope": "markup.yandex.wiki.question",
+			"settings": {
+				"fontStyle": "italic",
+				"foreground": "#ff0000"
+			}
+		},
+		{
+			"name": "Link URL",
+			"scope": "markup.underline.link.yandex.wiki",
+			"settings": {
+				"fontStyle": "",
+				"foreground": "#999"
+			}
+		},
+		{
+			"name": "Link Text",
+			"scope": "markup.underline.text.yandex.wiki",
+			"settings": {
+				"fontStyle": "",
+				"foreground": "#e6db74ff"
+			}
+		},
+		{
+			"name": "Quote",
+			"scope": "markup.quote.yandex.wiki",
+			"settings": {
+				"foreground": "#800000"
+			}
+		},
+		{
+			"name": "Remark green",
+			"scope": "markup.yandex.wiki.remark.green",
+			"settings": {
+				"foreground": "#00ff00"
+			}
+		},
+		{
+			"name": "Remark red",
+			"scope": "markup.yandex.wiki.remark.red",
+			"settings": {
+				"foreground": "#ff0000"
+			}
+		},
+		{
+			"name": "Remark blue",
+			"scope": "markup.yandex.wiki.remark.blue",
+			"settings": {
+				"foreground": "#04b"
+			}
+		},
+		{
+			"name": "Remark gray",
+			"scope": "markup.yandex.wiki.remark.gray",
+			"settings": {
+				"foreground": "#808080"
+			}
+		},
+		{
+			"name": "Remark yellow",
+			"scope": "markup.yandex.wiki.remark.yellow",
+			"settings": {
+				"foreground": "#FFFF00"
+			}
+		},
+		{
+			"name": "Code block",
+			"scope": "markup.inline.raw.string, punctuation.definition.yandex.wiki",
+			"settings": {
+				"foreground": "#fd971fff"
+			}
+		}
+	],
+	"name": "Wiki Base"
+}

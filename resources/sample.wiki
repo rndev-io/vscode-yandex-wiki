@@ -1,0 +1,48 @@
+== H1
+=== H2
+==== H3
+===== H4
+====== H5
+======= H6
+
+----
+
+**Bold**
+##monospace##
+++small++
+//italic//
+??question??
+__underline__
+
+((https://ya.com text))
+((https://ya.com))
+
+!!red!!, !!(red)red!!, !!(крас)red!!, !!(красный)red!!
+!!(green)green!!, !!(зел)green!!, !!(зеленый)green!!
+!!(blue)blue!!, !!(син)blue!!, !!(синий)blue!!
+!!(gray)gray!!, !!(grey)gray!!, !!(сер)gray!!, !!(серый)gray!!
+!!(yellow)yellow!!, !!(жел)yellow!!
+
+foo --strikethrough-- bar
+
+> quote
+<[ multiline quote ]>
+
+(?term?)
+
+<{cut}>
+
+https://some.link
+
+%%(js)
+var test = 10;
+const str = 'hello world';
+%%
+
+<# <input type="text"> #>
+
+Lorem **ipsum** dolor sit amet, //consectetur// adipisicing elit, sed do eiusmod
+quis nostrud exercitation https://ya.com ullamco ??laboris??? nisi ut aliquip ex ea commodo
+consequat. Duis aute irure ??asd **test** dolor?? in reprehenderit in voluptate velit esse
+cillum ((test asd)) eu fugiat nulla pariatur. Excepteur sint %%occaecat%% cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
