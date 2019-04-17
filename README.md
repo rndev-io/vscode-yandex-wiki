@@ -79,3 +79,8 @@ Dynamic actions with postfix `_action` for best search.
 
 
 
+## Sources
+
+[Syntax Highlight for Sublime](https://github.com/anton-rudeshko/sublime-yandex-wiki)
+[VSCode Syntax Highlight Guide](https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide)
+[Yandex Wiki markup description](https://yandex.ru/support/connect-wiki/static-markup.html?lang=en)
