@@ -178,5 +178,10 @@
         "prefix": "golang",
         "body": ["%%(go)", "${0:${TM_SELECTED_TEXT:text}}", "%%"],
         "name": "Golang code"
+    },
+    "json":{
+        "prefix": "json",
+        "body": ["%%(json)", "${0:${TM_SELECTED_TEXT:text}}", "%%"],
+        "name": "JSON object"
     }
 }

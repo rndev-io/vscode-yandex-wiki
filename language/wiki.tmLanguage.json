@@ -49,19 +49,19 @@
         },
         "bold": {
             "patterns": [{
-                "match": "\\*\\*.*(?<!\\s)\\*\\*",
+                "match": "\\*\\*.+?(?<!\\s)\\*\\*",
                 "name": "markup.bold.yandex.wiki"
             }]
         },
         "italic": {
             "patterns": [{
-                "match": "\/\/.*(?<!\\s)\/\/",
+                "match": "\/\/.+?(?<!\\s)\/\/",
                 "name": "markup.italic.yandex.wiki"
             }]
         },
         "underline": {
             "patterns": [{
-                "match": "__.*(?<!\\s)__",
+                "match": "__.+?(?<!\\s)__",
                 "name": "markup.underline.yandex.wiki"
             }]
         },
@@ -241,6 +241,15 @@
                     "beginCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
                     "endCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
                     "name": "markup.fenced_code.block.yandex.wiki"
+                },
+                {
+                    "begin": "%%\\(json\\)",
+                    "end": "%%",
+                    "beginCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
+                    "endCaptures": {"0": {"name": "punctuation.definition.yandex.wiki"}},
+                    "name": "markup.fenced_code.block.yandex.wiki",
+                    "contentName": "meta.embedded.block.js",
+                    "patterns": [{"include": "source.js"}]
                 }
             ]
         }
